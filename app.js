@@ -2,12 +2,12 @@
 let count = 0;
 
 // selecting value and buttons
-const value = document.getElementById("value");
-const btns = dovument.querySelectorAll(".btn");
+const value = document.querySelector("#value");
+const btns = document.querySelectorAll(".btn");
 
 // Adding event listeners
-btns.forEach(function(btn) {
-    btn.addEventListener("click", function(e) {
+btns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
         const styles = e.currentTarget.classList;
         if(styles.contains("decrease")) {
             count--;
@@ -23,10 +23,11 @@ btns.forEach(function(btn) {
         if (count < 0) {
             value.style.color = "red";
         }
-        if (count === 1) {
+        if (count === 0) {
             value.style.color = "#222";
         }
 
         value.textContent = count;
     });
 });
+
